@@ -1,0 +1,40 @@
+[System]
+Name='lab4_4_2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='food'
+Range=[0 10]
+NumMFs=2
+MF1='rancid':'trimf',[-3.92890476190476 0.238095238095238 4.40509523809524]
+MF2='delicious':'trimf',[6 10 14]
+
+[Input2]
+Name='service'
+Range=[0 10]
+NumMFs=3
+MF1='poor':'trimf',[-4.167 0 4.167]
+MF2='good':'trimf',[0.8333 5 9.167]
+MF3='excellent':'trimf',[5.80710582010582 9.97310582010582 14.1401058201058]
+
+[Output1]
+Name='tip'
+Range=[0 30]
+NumMFs=3
+MF1='cheap':'trimf',[-15.2784126984127 -2.7784126984127 9.7225873015873]
+MF2='average':'trimf',[3.29365079365079 15.7936507936508 28.2936507936508]
+MF3='generous':'trimf',[20.0396825396825 32.5396825396826 45.0396825396826]
+
+[Rules]
+1 1, 1 (1) : 2
+0 2, 2 (1) : 2
+2 3, 3 (1) : 2
